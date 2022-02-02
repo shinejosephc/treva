@@ -1,0 +1,84 @@
+
+
+@import '../base/mixins';
+@import '../base/variables';
+
+.mainBtn{
+	height: 50px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: $primaryColor;
+	font-size: 1.6rem;
+	cursor: pointer;
+	border: 0;
+	outline: none;
+	padding: 0 30px;
+	color: #fff;
+	transition: all 0.3s;
+	border-radius: 5px;
+	&:hover{
+		background: $secondaryColor;
+		color: #fff;
+	}
+	&.isLarge{
+		height: 60px;
+		font-size: 2rem;
+	}
+	&.isSmall{
+		height: 40px;
+		font-size: 1.4rem;
+	}
+	&.isFullwidth{
+		width: 100%;
+	}
+	&.isPrimary{
+		background: $primaryColor;
+		color: #000;
+	}
+	&.isSecondary{
+		background: $secondaryColor;
+	}
+	img{
+		margin-right: 15px;
+	}
+}
+
+.btn-small {
+	padding: 0px 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.btn-white {
+	background-color: $textWhite;
+	color: $primaryColor;
+	border: 1px solid $textWhite;
+	&:hover {
+		color: $textLight;
+		background-color: $lightGrey;
+		border: 1px solid $lightGrey;
+		opacity: .8;
+	}
+}
+.btn-border-white {
+	background-color: $textWhite;
+	color: $textLight;
+	border: 1px solid $greyColor;
+	&:hover {
+		color: $textLight;
+		background-color: $lightGrey;
+		border: 1px solid $greyColor;
+		opacity: .8;
+	}
+}
+.btn-blue {
+	background-color: $darkerBlue;
+	border: 1px solid $primaryColor;
+	color: $textWhite;
+	&:hover {
+		color: $textWhite;
+		background-color: $darkerBlue;
+		border: 1px solid $darkerBlue;
+	}
+}

@@ -1,0 +1,593 @@
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/helpers';
+@import 'components/bootstarp-icons';
+@import 'components/main/header';
+@import 'components/main/footer';
+.content {
+    // Slider Section Starts
+    section {
+        &.slider-section {
+            margin-top: -83px;
+            .slider {
+                padding-top: 83px;
+                min-height: 100vh;
+                align-items: center;
+                background-image: url('#{$imgPath}bg.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: bottom;
+                @include mqMx(midlarge){ 
+                    padding-bottom: 30px;
+                }
+                @include mqMx(large){ 
+                    min-height: auto;
+                }
+                @include mqMx(small){
+                    padding-bottom: 80px;
+                }
+                .slider-content {
+                    justify-content: flex-start;
+                    position: relative;
+                    align-items: flex-start;
+                    @include mqMx(small){
+                        flex-direction: column-reverse;
+                        align-items: flex-start;
+                    }
+                    .slider-desc {
+                        width: calc(100% - 400px);
+                        padding: 50px 0px;
+                        @include mqMx(small){ 
+                            width: 100%;
+                        }
+                        h2 {
+                            font-size: $largeFontSize + 8px;
+                            font-weight: 700;
+                            color: $textWhite;
+                            margin-bottom: 64px;
+                            line-height: 53px;
+                            letter-spacing: 1px;
+                            position: relative;
+                            @include mqMx(ultraLarge){
+                                font-size: $largeFontSize + 5px;
+                                line-height: 75px;
+                            }
+                            @include mqMx(extraLarge){
+                                font-size: $largeFontSize;
+                                line-height: 68px;
+                            }
+                            @include mqMx(large){
+                                font-size: $largeFontSize - 5px;
+                                line-height: 45px;
+                                letter-spacing: 0px;
+                            }
+                            @include mqMx(medium){
+                                font-size: $largeFontSize - 6px;
+                                line-height: 40px;
+                            }
+                            @include mqMx(small){
+                                font-size: $largeFontSize - 8px;
+                                line-height: 36px;
+                                br {
+                                    display: none;
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                width: 24px;
+                                height: 4px;
+                                background-color: $successColor;
+                                position: absolute;
+                                left: 0px;
+                                bottom: -34px;
+                            }
+                        }
+                        p {
+                            font-size: $baseFontSize + 4px;
+                            font-weight: 400;
+                            color: $textWhite 70%;
+                            line-height: 25px;
+                            margin-bottom: 32px;
+                            @include mqMx(small){
+                                font-size: $baseFontSize;
+                                br {
+                                    display: none;
+                                }
+                            }
+                        }
+                        a {
+                            padding: 12px 20px;
+                            border-radius: 2px;
+                            font-size: $baseFontSize + 1px;
+                            background-color: $primaryColor;
+                            line-height: 24px;
+                            &:hover {
+                                border: 1px solid $primaryColor;
+                            }
+                        }
+                    }
+                    .slider-pic {
+                        width: 400px;
+                        @include mqMx(small){
+                            width: 100%;
+                            text-align: center;
+                        }
+                        img  {
+                            width: auto;
+                            @include mqMx(small){
+                                max-width: 300px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Slider Section Ends
+    // Product Section Starts
+    section {
+        &.product-section {
+            .product {
+                padding-bottom: 100px;
+                @include mqMx(large){
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .product-img {
+                    width: 500px;
+                    position: relative;
+                    @include mqMx(large){
+                        width: 600px;
+                        margin: 0px auto;
+                        margin-bottom: 20px;
+                    }
+                    @include mqMx(small){
+                        width: 80%;
+                    }
+                    @include mqMx(largemobile){
+                        width: 100%;
+                    }
+                    .holder {
+                        padding-bottom: 10px;
+                    }
+                    .holder::-webkit-scrollbar {
+                        display: none;
+                    }
+                    
+                    /* Hide the images by default */
+                    .slides {
+                    display: none;
+                        /* max-width: 1000px; */
+                        /* width: 100%;
+                        flex-shrink: 0;
+                        height: 100%; */
+                    }
+                    
+                    .slides img {
+                        width: 100%;
+                    }
+                    
+                    /* Smartphones (portrait and landscape) ----------- */
+                    @media only screen and (max-width: 600px) {
+                    .prevContainer,
+                    .nextContainer {
+                        display: none;
+                        visibility: hidden;
+                    }
+                    }
+                    .prevnex {
+                        position: absolute;
+                        top: calc(50% - 10px);
+                        top: 250px;
+                        border-radius: 50%;
+                    }
+                    .prevContainer,
+                    .nextContainer {
+                        background-color: #F4F6F6;
+                        top: 250px;
+                        transform: translate(0, calc(-50% - 54px));
+                        height: 54px;
+                        width: 54px;
+                        cursor: pointer;
+                    }
+                    
+                    .prevContainer {
+                        left: 0;
+                        border-radius: 50%;
+                    }
+                    
+                    .prev {
+                        position: relative;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        height: 34px;
+                        width: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0px auto;
+                    }
+                    
+                    .prev svg,
+                    .next svg {
+                        fill: white;
+                    }
+                    
+                    .nextContainer {
+                        right: 0;
+                    }
+                    
+                    .next {
+                        position: relative;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        height: 34px;
+                        width: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0px auto;
+                    }
+                    
+                    /* Container for image text */
+                    .caption-container {
+                        text-align: left;
+                        background-color: #222;
+                        padding: 2px 16px;
+                        color: white;
+                    }
+                    
+                    .rower {
+                        display: flex;
+                        justify-content: space-between;
+                        @include mqMx(small){
+                            flex-wrap: wrap;
+                        }
+                        &::after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+                        .column {
+                            float: left;
+                            width: calc(14.5% - 10px);
+                            margin-left: 7px;
+                            img {
+                                border: 1px solid transparent;
+                                border-radius: 5px;
+                                &.active {
+                                    border: 1px solid rgba(0, 0, 0, 0.24);
+                                }
+                            }
+                            &:first-child {
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                    /* Add a transparency effect for thumbnail images */
+                    .slide-thumbnail {
+                        width: 100%;
+                        opacity: 0.6;
+                        cursor: pointer;
+                    }
+                    
+                    .active,
+                    .slide-thumbnail:hover {
+                        opacity: 1;
+                    }
+                }
+                .product-desc {
+                    width: calc(100% - 600px);
+                    padding-left: 100px;
+                    @include mqMx(large){
+                        width: 100%;
+                        padding-right: 100px;
+                    }
+                    @include mqMx(medium){
+                        padding-right: 0px;
+                        padding-left: 0px;
+                    }
+                    h4 {
+                        font-size: $baseFontSize - 1px;
+                        text-transform: uppercase;
+                        color: $greyColor;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .product-name {
+                        h3 {
+                            font-size: $largeFontSize + 8px;
+                            font-weight: 700;
+                            color: $blackColor;
+                            margin-bottom: 10px;
+                            line-height: 53px;
+                        }
+                        p {
+                            font-size: $baseFontSize + 4px;
+                            font-weight: 300;
+                            color: $textLight;
+                            line-height: 30px;
+                            margin-bottom: 32px;
+                        }
+                    }
+                    .star {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding-bottom: 20px;
+                        ul {
+                            display: flex;
+                            justify-content: flex-start;
+                            margin-bottom: 0px;
+                            padding: 0px;
+                            margin-top: -2px;
+                            li {
+                                list-style: none;
+                                margin-left: 2px;
+                                &:first-child {
+                                    margin-left: 0px;
+                                }
+                                img {
+
+                                }
+                            }
+                        }
+                        span {
+                            display: inline-flex;
+                            margin-left: 10px;
+                            color: $blackColor;
+                            font-size: $baseFontSize + 1px;
+                        }
+                    }
+                    .color-selector {
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            padding: 0px;
+                            margin: 0px;
+                            li {
+                                width: calc(26% - 13px);
+                                list-style: none;
+                                margin-left: 10px;
+                                border: 1px solid #D8E0E2;
+                                border-radius: 5px;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                cursor: pointer;
+                                margin-bottom: 10px;
+                                .color-item {
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+                                    padding: 18px 10px;
+                                    text-align: center;
+                                    line-height: 15px;
+                                }
+                                &:first-child {
+                                    margin-left: 0px;
+                                }
+                                &:nth-child(5) {
+                                    margin-left: 0px;
+                                }
+                                &.active,&:hover {
+                                    border: 1px solid $blackColor;
+                                }
+                                &.active {
+                                    .color-item {
+                                        font-weight: 500;
+                                        color: $blackColor;
+                                    }
+                                }
+                                span {
+                                    text-transform: uppercase;
+                                    color: $textWhite;
+                                    font-size: $baseFontSize - 4px;
+                                    width: 100%;
+                                    position: absolute;
+                                    text-align: center;
+                                    top: 0px;
+                                    left: 0px;
+                                    &.orange {
+                                        background-color: $orangeColor;
+                                    }
+                                    &.purple {
+                                        background-color: $purpleColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .quantity {
+                button {
+                    background-color: #EDF1F2;
+                    border: none;
+                    padding: 12px 15px;
+                    font-size: $baseFontSize + 2px;
+                    color: #8CA4AB;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    &:hover,&:visited,&:focus {
+                        outline: none;
+                        border: none;
+                    }
+                }
+                input {
+                    width: 30px;
+                    border: none;
+                    background-color: transparent;
+                    text-align: center;
+                    font-size: $baseFontSize + 2px;
+                }
+            }
+            .buy {
+                padding-top: 20px;
+                a {
+                    &.add-to-buy {
+                        width: 100%;
+                        display: inline-block;
+                        margin: 20px 0px;
+                        border-radius: 10px;
+                        background-color: $successColor;
+                        font-size: $baseFontSize + 2px;
+                        line-height: 72px;
+                        color: $textWhite;
+                        text-align: center;
+                        img {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: auto;
+                    li {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        input[type=radio]{
+                            position: absolute;
+                            visibility: hidden;
+                        }
+                        label{
+                            display: block;
+                            position: relative;
+                            padding-left: 30px;
+                            margin: 10px auto;
+                            z-index: 9;
+                            cursor: pointer;
+                            -webkit-transition: all 0.25s linear;
+                            font-size: $baseFontSize + 2px;
+                            font-weight: 600;
+                            color: $blackColor;
+                            span {
+                                font-size: $baseFontSize - 1px;
+                                font-weight: 400;
+                                a {
+                                    &.pay {
+                                        display: inline-block;
+                                        padding: 0px 5px;
+                                        border-radius: 20px;
+                                        background-color: #B1FBE3;
+                                        color: $blackColor;
+                                        margin-right: 5px;
+                                        font-style: italic;
+                                        font-size: $baseFontSize - 2px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        .check{
+                            display: block;
+                            position: absolute;
+                            border: 2px solid #aaa;
+                            border-radius: 100%;
+                            height: 20px;
+                            width: 20px;
+                            top: 3px;
+                            left: 0px;
+                            z-index: 5;
+                            transition: border .25s linear;
+                            -webkit-transition: border .25s linear;
+                            &::before {
+                                display: block;
+                                position: absolute;
+                                content: '';
+                                border-radius: 100%;
+                                height: 10px;
+                                width: 10px;
+                                top: 3px;
+                                left: 3px;
+                                margin: auto;
+                                transition: background 0.25s linear;
+                                -webkit-transition: background 0.25s linear;
+                            }
+                        }
+                        &:hover {
+
+                        }
+                    }
+                }
+                input[type=radio]:checked ~ .check {
+                    border: 2px solid $successColor;
+                }
+                input[type=radio]:checked ~ .check::before{
+                    background: $successColor;
+                }
+                input[type=radio]:checked ~ label{
+
+                }
+            }
+            .policies {
+                ul {
+                    padding: 0px;
+                    margin: 0px;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    li {
+                        list-style: none;
+                        padding-left: 25px;
+                        position: relative;
+                        line-height: 24px;
+                        margin-bottom: 16px;
+                        font-size: $baseFontSize + 2px;
+                        color: #34393A;
+                        font-weight: 400;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0px;
+                            top: 4px;
+                            background-image: url('#{$imgPath}tick2.svg');
+                            background-repeat: no-repeat;
+                            background-position: left;
+                            background-size: 18px;
+                            width: 18px;
+                            height: 18px;
+                        }
+                        &.special {
+                            font-size: $baseFontSize;
+                            margin-bottom: 0px;
+                            margin-top: 10px;
+                            padding-left: 30px;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0px;
+                                top: 4px;
+                                background-image: url('#{$imgPath}truck.svg');
+                                background-repeat: no-repeat;
+                                background-position: left;
+                                background-size: 20px;
+                                width: 20px;
+                                height: 20px;
+                            }  
+                        }
+                        a {
+                            color: #545c5f;
+                            font-weight: 600;
+                            text-decoration: underline;
+                            text-underline-position: from-font;
+                            text-decoration-color: #d1d1d1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Product Section Ends
+}
+

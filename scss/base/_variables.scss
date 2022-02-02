@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'hk-bold';
+    src: url('../fonts/HKGrotesk-Bold.otf');
+}
+@font-face {
+    font-family: 'hk-light';
+    src: url('../fonts/HKGrotesk-Light.otf');
+}
+@font-face {
+    font-family: 'hk-med';
+    src: url('../fonts/HKGrotesk-Medium.otf');
+}
+@font-face {
+    font-family: 'hk-semi';
+    src: url('../fonts/HKGrotesk-SemiBold.otf');
+}
+@font-face {
+    font-family: 'hk-reg';
+    src: url('../fonts/HKGrotesk-Regular.otf');
+}
+$fontStack: 'hk-reg', sans-serif;
+$headFont: 'hk-bold', sans-serif;
+$systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$rootFontSize: 62.5%;
+$baseFontSize: 14px;
+$largeFontSize: 32px;
+
+$primaryColor: #528FF0;
+$secondaryColor: #0f0f0f;
+$textWhite: white;
+$blackColor: #222323;
+$textColor : #8e8e8e;
+$textLight: #4F5659;
+$borderColor: #e2e2e2;
+$greyColor: #939C9F;
+$lightGrey: #c7c7c7;
+$dangerColor: #d65050;
+$successColor:#00BA74;
+$lightBlue: #ebeeff;
+$lightYellow: #fef2d9;
+$lightGreen: #d9f1f0;
+$lightPurple: #ffe4e7;
+$inputBorder: #c3c3c3;
+$darkerBlue: #030F3F;
+$inputBg: #f8f8f8;
+$darkerBlack: #031610;
+$purpleColor: #A07EDC;
+$orangeColor: #DE742D;
+
+
+//Vars
+$bootstrapiconPath : "../fonts/";
+$imgPath : "../images/";
+$stylePath : "../scss/";

@@ -1,0 +1,175 @@
+.header {
+	z-index: 1;
+	padding-top: 83px;
+	.main-header {
+		padding: 20px 0px;
+		top: 0px;
+		position: absolute;
+		background-color: transparent;
+		z-index: 100;
+		@include mqMx(large){
+			height: 83px;
+			display: flex;
+			align-items: center;
+		}
+		.logo {
+			position: relative;
+			width: 150px;
+			@include mqMx(large){
+				width: 100%;
+				padding-right: 60px;
+			}
+			img {
+				width: 150px;
+			}
+			.mobile-menu {
+				display: none;
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				right: 10px;
+				top: 0px;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				@include mqMx(large){
+					display: flex;
+				}
+				&::before {
+					content: "\f479";
+					font-family: bootstrap-icons;
+					font-size: $largeFontSize + 8px;
+					color: $primaryColor;
+					position: absolute;
+				}
+				&.open {
+					&::before {
+						content: "\f62a";
+					}
+				}
+			}
+		}
+		.main-menu {
+			@include mqMx(large){
+				display: none;
+			}
+			.menu {
+				ul {
+					margin-bottom: 0px;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					padding-left: 0px;
+					li {
+						padding: 0px 15px;
+						list-style: none;
+						@include mqMx(extraLarge){
+							padding: 0px 10px;
+						}
+						a {
+							color: $textWhite;
+							font-weight: 300;
+							font-size: $baseFontSize + 1px;
+							@include mqMx(extraLarge){
+								font-size: $baseFontSize;
+							}
+							&.active {
+								color: $primaryColor;
+							}
+							&:hover {
+								color: $primaryColor;
+							}
+						}
+						&.current-menu-item {
+							a {
+								color: $primaryColor;
+							}
+						}
+					}
+				}
+			}
+			&.open {
+				@include mqMx(large){
+					display: flex;
+					padding-bottom: 0px;
+				}
+				width: 100%;
+				position: absolute;
+				top: 83px;
+				background-color: $primaryColor;
+				left: 0px;
+				flex-direction: column;
+				z-index: 1;
+				.menu {
+					@include mqMx(large){
+						width: 100%;
+					}
+					ul {
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: flex-start;
+						padding-left: 0px;
+						width: 100%;
+						margin: 0px;
+						margin-bottom: 0px;
+						li {
+							padding: 0px 0px;
+							list-style: none;
+							width: 100%;
+							a {
+								color: $textWhite;
+								font-weight: 400;
+								font-size: $baseFontSize;
+								display: inline-block;
+								width: 100%;
+								line-height: 45px;
+								padding: 0px 25px;
+								&.active {
+									color: $textWhite;
+									background-color: $secondaryColor;
+								}
+								&:hover {
+									color: $textWhite;
+									background-color: $secondaryColor;
+								}
+							}
+							&.mobile {
+								display: none;
+								@include mqMx(large){
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.login-phone {
+			@include mqMx(large){
+				display: none;
+			}
+			ul {
+				margin-bottom: 0px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				padding-left: 0px;
+				li {
+					padding: 0px 10px;
+					list-style: none;
+					a {
+						font-weight: 500;
+						font-size: $baseFontSize + 1px;
+						img {
+							margin-left: 5px;
+						}
+						&.login {
+							background-color: $textWhite;
+						}
+					}
+				}
+			}
+		}
+	}
+}
